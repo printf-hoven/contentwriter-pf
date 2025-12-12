@@ -14,8 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // GENERATE KEY ->> https://hoven.in/cs-lang/gemini-keys-for-sk.html
-
-string? GEMINIAPIKEY = Environment.GetEnvironmentVariable("GEMINIAPIKEY");
+string? GEMINIAPIKEY = your_key_here ;// Environment.GetEnvironmentVariable("GEMINIAPIKEY");
 
 Debug.Assert(!string.IsNullOrEmpty(GEMINIAPIKEY), $"Please set the environment variable '{GEMINIAPIKEY}' with your Gemini API key.");
 
@@ -42,3 +41,4 @@ app.MapRazorPages();
 app.MapHub<ProgressHub>("/progressHub");
 
 app.Run();
+
