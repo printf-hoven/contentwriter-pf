@@ -6,7 +6,7 @@ Content Writer and proof Reader for Blog Articles with Process Framework. The re
 
 # Video Explanation
 
-[![Proof Reader and Content Creator for a Blog Page with Semantic Kernel C# and ASPNET Core](https://img.youtube.com/vi/4BqQipDQ8GQ/0.jpg)](https://www.youtube.com/watch?v=4BqQipDQ8GQ)
+[![Proof Reader and Content Creator for a Blog Page with Semantic Kernel C# and ASPNET Core](https://img.youtube.com/vi/XZWyeEZhWtU/0.jpg)](https://www.youtube.com/watch?v=XZWyeEZhWtU)
 
 
 # Get Gemini Keys as here->
