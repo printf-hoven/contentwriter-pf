@@ -1,0 +1,117 @@
+﻿@page
+
+@model IndexModel
+
+<div class="row g-3 mt-3">
+
+    <h1 class="display-6 text-center text-secondary">Write Ideas in any Order</h1>
+
+    <form class="text-secondary" id="form_main">
+
+        <textarea type="text" autocomplete="off" class="form-control me-auto border-info fw-semibold mb-3" id="user_message" required></textarea>
+
+        <button id="btn_submit" class="btn btn-secondary">Create a Blog Page in HTML</button>
+
+    </form>
+
+    <div class="w-75 mx-auto">
+
+        <div class="text-success" id="divStatus"></div>
+
+        <div id="spinner_please_wait" hidden class="spinner-grow" style="width: 3rem; height: 3rem;"></div>
+
+        <div id="system_message" class="vstack gap-1"></div>
+
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript" src="~/js/chatScript.js"></script>
+
+    <script>
+
+        window.onload = () => {
+
+          const form_main = document.getElementById("form_main");
+
+          const user_message = document.getElementById("user_message");
+
+          const spinner_please_wait = document.getElementById("spinner_please_wait");
+
+          const system_message = document.getElementById("system_message");
+
+          let aICaller = new AICaller();
+
+          form_main.addEventListener("submit", (event) => {
+
+              event.preventDefault();
+
+              spinner_please_wait.hidden = false;
+
+              system_message.innerText = "";
+
+              btn_submit.disabled = true;
+
+              /*
+                  send the user-typed text via ajax to
+                  it is handled by OnPostAsync method in the Index.cshtl.cs file
+              */
+              aICaller.post_message("/Index", user_message.value)
+
+              .then(() => {
+
+                  spinner_please_wait.hidden = true;
+
+                  user_message.value = "";
+
+                  if(aICaller.last_is_success){
+
+                    system_message.innerText = aICaller.last_return;
+
+                    btn_submit.disabled = false;
+                  }
+                  else alert("ERROR " + aICaller.last_return);
+
+              });
+           });
+
+        }
+
+    </script>
+
+    <!-- SignalR for realtime updates -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"
+            type="text/javascript">
+    </script>
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/progressHub")
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            connection
+                .on("OnStatusUpdate", (text) => divStatus.innerText = text);
+
+            async function start() {
+
+                connection
+                    .start()
+                    .then(() => console.log("SignalR Connected."))
+                    .catch(() => /* retry */ setTimeout(start, 5000));
+            };
+
+            connection.onclose(async () => await start());
+
+            start();
+
+        });
+
+    </script>
+
+}
