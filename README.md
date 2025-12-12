@@ -4,6 +4,10 @@ Content Writer and proof Reader for Blog Articles with Process Framework. The re
 # Detailed explanation ↓
 [(C# ASP.NET Core) Project on Proof Reading and Writing Blog Articles with ASPNET Core and AI Process Framework](https://hoven.in/aspnet-core/sk-proofreader.html)
 
+# Video Explanation
+
+[![Proof Reader and Content Creator for a Blog Page with Semantic Kernel C# and ASPNET Core](https://img.youtube.com/vi/4BqQipDQ8GQ/0.jpg)](https://www.youtube.com/watch?v=4BqQipDQ8GQ)
+
 
 # Get Gemini Keys as here->
 
