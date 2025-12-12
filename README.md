@@ -1,7 +1,7 @@
 # About
 Content Writer and proof Reader for Blog Articles with Process Framework. The resulting format is HTML. Enter a few ideas and click the button to get a good blog article written for you. This project has been done with ASPNET Core.
 
-# Detailed explanation ↓
+# Blog Page for detail ↓
 [(C# ASP.NET Core) Project on Proof Reading and Writing Blog Articles with ASPNET Core and AI Process Framework](https://hoven.in/aspnet-core/sk-proofreader.html)
 
 # Video Explanation
