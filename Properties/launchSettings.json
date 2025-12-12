@@ -9,16 +9,6 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5110"
     },
-    "https": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "GEMINIAPIKEY": "AIzaSyDOXQfC5PDOh8ceSITXypEkQlvbA_j2KvM"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7062;http://localhost:5110"
-    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
@@ -36,4 +26,5 @@
       "sslPort": 44365
     }
   }
+
 }
